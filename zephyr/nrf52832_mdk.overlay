@@ -1,0 +1,33 @@
+&i2c0 {
+    status = "okay";
+	sda-pin = <4>;
+	scl-pin = <3>;
+        ccs811@5a {
+                compatible = "ams,ccs811";
+                reg = <0x5a>;
+                label = "CCS811";		
+        };
+	bme680@77 {
+                compatible = "bosch,bme680";
+                label = "BME680";
+                reg = <0x77>;
+        };
+        bme280@76 {
+                compatible = "bosch,bme280";
+                label = "BME280";
+                reg = <0x76>;
+        };
+};
+
+&adc {
+	status ="okay";
+        label = "ADC_0";
+};
+
+&uart0 {
+	status = "okay";
+	compatible = "nordic,nrf-uart";
+	current-speed = <115200>;
+	tx-pin = <6>;
+	rx-pin = <5>;
+};
